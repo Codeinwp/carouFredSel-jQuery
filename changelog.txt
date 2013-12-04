@@ -1,0 +1,193 @@
+version 6.2.x
+Plugin is now capable of using CSS-transitions (instead of javascript animations) powered by the jQuery.transit-plugin.
+Optionally use the existing wrapper element a the carousel-wrapper.
+Improved resetting to pre-init state after triggering the "destroy"-custom event.
+Removed the use of public methods.
+
+version 6.1.x
+Added support for using the jQuery.throttle and jQuery.debounce plugins.
+Small bugfixes.
+Added z-index to cloned carousels for fx crossfade and (un)cover.
+
+version 6.0.x
+Added new scrolling effects "cover-fade" and "uncover-fade".
+Replaced support for the touchwipe-plugin with the touchSwipe-plugin.
+Added option to swipe using the mouse (drag).
+Changed the scroll.swipe option to a new scroll-object.
+Changed scroll.mousewheel options to a new scroll-object.
+Added auto.progress.bar, auto.progress.interval and auto.progress.updater options for progressbar behavior.
+Renamed auto.onPauseStart, auto.onPausePause and auto.onPauseEnd to auto.onTimeoutStart, auto.onTimeoutPause and auto.onTimeoutEnd.
+Renamed auto.pauseDuration to auto.timeoutDuration.
+Added option pagination.deviation to deviate selected pager-bullet.
+The 2nd plugin parameter can be true as a shortcut for { debug: true }.
+Added parameter direction to the conditions and onEnd-callback function.
+The onBefore, onAfter and onCreate-callback functions now receive only one parameter: a map of all data.
+Added scroll.direction to the parameter for the onBefore and onAfter-callback functions.
+Added scroll.items to the parameter for the onBefore and onAfter-callback functions.
+Added items.skipped to the parameter for the onBefore and onAfter-callback functions.
+The scroll-object parameter in the prev and next-custom events extend and not override the configuration scroll-object.
+Added parameter queue to the prev and next-custom events.
+Added object $.fn.carouFredSel.cookie with get, set and remove functions to manage cookies.
+Removed item argument from anchorBuilder-callback function, now this refers to the current item.
+Fixed non-circular bug on responsive carousels.
+Fixed variable item-sizes bug in alternative effects.
+Fixed double duration time in fade-effect.
+Fixed destroying responsive carousel bug.
+Fixed bug with negative margin when scrolling backward.
+
+version 5.6.x
+Fixed responsive bug in IE.
+Fixed small bugs.
+
+version 5.5.x
+Enabled creating responsive carousels.
+Added support for dynamic sizes (e.g. "100%").
+Added pauseOnResize option.
+Added pauseOnEvent option.
+Fixed small bugs.
+
+version 5.4.x
+Added slice-custom event.
+Addes easing funcitons quadratic, cubic and elastic.
+
+version 5.3.x
+Added updateSizes-custom event.
+Addes items.filter option to specify the elements to handle as items (and ignore all other elements).
+Added option to use a fixed pagination.
+
+version 5.2.x
+Added auto.button and auto.event options.
+Added classnames.paused and classnames.stopped to the second configuration object.
+Improved showing more items than would fit.
+items.visible can take a function that returns a value.
+Added array option for items.start
+Added scrolling a dynamic number of items.
+Fixed bug with negative padding.
+Added option to specify the classnames for navigational buttons and anchors.
+
+version 5.1.x
+Added "page" as a value for scroll.items.
+Added min and max as an option for items.visible.
+Improved scrolling a variable number of visible items.
+Added option to set the namespace and a prefix for the custom events.
+Changed behavior for "+1", "-1", "odd", "odd+, "even" and "even+" for items.visible.
+Added showing a dynamic number of items.
+Added onAfter paramter for the slideTo-custom event.
+Added prevPage-, nextPage- and slideToPage-custom events.
+
+version 5.0.x
+Added option to specify items per page in pagination.
+Added option to resume pause in custom event.
+Rewrote large sections of the code.
+Changed return value of the isPaused-custom event.
+Added isStopped-custom event.
+Added isScrolling-custom event.
+Added option to immediately pause or stop a carousel
+Added finish and resume-custom events.
+Added onBefore and onAfter-custom events.
+Added option to start at the position stored in a cookie.
+Improved onPauseStart, onPausePause and onPauseEnd timing.
+Added second configuration-object for plugin options.
+Moved dedug-option to second configuration-object.
+
+version 4.5.x
+Added event and wipe options to the scrolling configuration.
+Fixed bug in non-circular carousels with a viriable number of visible items.
+
+version 4.4.x
+Added "+1", "-1", "odd", "odd+, "even" and "even+" as a value for items.visible.
+Added queue option and event.
+Added synchronise option and event.
+Added fx "directscroll".
+Added direction paramter for the slideTo-custom event.
+Enabled inserting items at the end of the list in the original item order.
+button and container options can take a function that returns a value.
+Fixed bug with fx "cover" and "uncover" with variable sizes.
+Fixed bug with same buttons on multiple carousels.
+
+version 4.3.x
+Replaced global pause with stop-custom event.
+Increased performance.
+Enabled using the return value when calling the triggerHandler-method.
+Fixed nested carousel bug.
+Added debug option for debugging.
+Added currentPage and currentVisible as custom events.
+Added align "left" (or "top"), "right" (or "bottom") and "center".
+The configuration-custom event now supports a key/value object as configuration.
+Optional onAfter-callback function as parameter in the prev- and next-custom events.
+
+version 4.2.x
+Added onCreate callback-function.
+Improved parameters in callback-functions.
+Improvements made to destroy event.
+Added fx "fade", "crossfade", "cover" and "uncover".
+Added option to put items back in original order when destroying a carousel.
+
+version 4.1.x
+Updated current page calculation on pagination.
+Fixed bug with auto-complemented values when re-setting options.
+Added firstItem as a second parameter in the anchorBuilder function.
+Scope (this) in callback-function now refers to the carousels HTML-element.
+Carousel no longer scroll if it isn't visible (:hidden).
+Added configuration and currentPosition as custom events.
+Added onPauseStart, onPauseEnd and onPausePause callback-functions for scrolling automatically.
+
+version 4.0.x
+Plugin automatically complements undefined values for sizes, padding and visible items, depending on other options. For example: if the number of visible items is undefined, it will be calculated by deviding the width by the item width.
+Better support for a variable number of visible items with variable sizes.
+Added padding: "auto" to automatically center the items inside the carousel.
+Added items.start: "random".
+Added linkAnchors and destroy as custom events.
+Wrapper will inherit margins from carousel-element.
+Added conditions callback-functions.
+
+version 3.2.x
+prev and next events no longer scroll a globally paused carousel.
+Added auto as a value for the height/width option.
+Added current_position public method.
+Blocked double created carousels (first created will be destroyed).
+
+version 3.1.x
+Added onEnd callback-functions.
+
+version 3.0.x
+Added support for a Variable Number Of Visible Items With Variable Sizes.
+
+version 2.6.x
+Removed support for scrollTo (conflicted with prototype).
+Added preventDefault on keyPresses.
+
+version 2.5.x
+Added option to globally pause and play.
+Integrated the jQuery.mousewheel-plugin.
+Added the link_anchors public method.
+Added option to resume the pauseOnHover onMouseOut as an alternative to restart it.
+
+version 2.4.x
+Added shorthand notation for the items and scroll options.
+Added optional padding to the wrapper-div.
+Made firing the plugin case-insensitive.
+Added the items.minimal and items.start options.
+Changed the parameters for the callback-functions onBefore and onAfter.
+Changed the name for the custom event scrollTo in to slideTo.
+
+version 2.3.x
+Added the option to create non-circular carousels.
+Added the option to create non-infinite carousels.
+Changed the parameters for the custom events scrollTo, insertItem en removeItem.
+
+version 2.2.x
+Added pixel-based speed calculation.
+Added the public methods configuration and destroy.
+Changed the parameters for the callback-functions onBefore and onAfter.
+
+version 2.1.x
+Added support for variable item sizes.
+Added the option to set a fixed width and height for the carousel.
+Changed the option visibleItems in to items.visible.
+
+version 2.0.x
+Integrated the jQuery.nap-plugin.
+Added item-based speed calculation.
+Changed the option autoPlay in to auto.play.
+Added the possibility to create a carousel from any HTML element.
