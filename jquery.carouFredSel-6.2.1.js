@@ -18,7 +18,7 @@
 		} else {
 			if (typeof exports === 'object') {
 				// Node/CommonJS
-				var jQuery = require('jquery');
+				jQuery = require('jquery');
 			}
 			// Browser globals
 			factory(jQuery);
