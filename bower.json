@@ -1,0 +1,14 @@
+{
+  "name": "gilbitron/carouFredSel",
+  "version": "6.2.1",
+  "main": "jquery.carouFredSel-6.2.1.js",
+  "description": "A circular, responsive carousel plugin built using the jQuery.",
+  "license": "MIT",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7 <2.0"
+  }
+}
