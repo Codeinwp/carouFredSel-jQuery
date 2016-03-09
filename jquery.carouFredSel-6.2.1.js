@@ -307,9 +307,9 @@
 				'float'			: 'none',
 				'position'		: 'absolute',
 				'top'			: 0,
-				'right'			: 'auto',
+				'right'			: (opts.dir == 'rtl') ? 0 : 'auto',
 				'bottom'		: 'auto',
-				'left'			: 0,
+				'left'			: (opts.dir == 'ltr') ? 0 : 'auto',
 				'marginTop'		: 0,
 				'marginRight'	: 0,
 				'marginBottom'	: 0,
@@ -2705,6 +2705,7 @@
 
 	$.fn.carouFredSel.serialNumber = 1;
 	$.fn.carouFredSel.defaults = {
+		'dir': 'ltr',
 		'synchronise'	: false,
 		'infinite'		: true,
 		'circular'		: true,
