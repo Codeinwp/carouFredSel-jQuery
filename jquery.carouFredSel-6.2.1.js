@@ -303,13 +303,13 @@
 			sz_storeOrigCss($cfs);
 			$cfs.data('_cfs_origCssZindex', orgCSS.zIndex);
 			$cfs.css({
-				'textAlign'		: 'left',
+				'textAlign'		: (opts.orientation.toLowerCase() == 'ltr') ? 'left' : 'right',
 				'float'			: 'none',
 				'position'		: 'absolute',
 				'top'			: 0,
-				'right'			: 'auto',
+				'right'			: (opts.orientation.toLowerCase() == 'rtl') ? 0 : 'auto',
 				'bottom'		: 'auto',
-				'left'			: 0,
+				'left'			: (opts.orientation.toLowerCase() == 'ltr') ? 0 : 'auto',
 				'marginTop'		: 0,
 				'marginRight'	: 0,
 				'marginBottom'	: 0,
@@ -2710,6 +2710,7 @@
 		'circular'		: true,
 		'responsive'	: false,
 		'direction'		: 'left',
+		'orientation'	: 'ltr',
 		'items'			: {
 			'start'			: 0
 		},
@@ -3835,11 +3836,20 @@
 	function cf_getDimensions(o) {
 		var dm = [
 				['width'	, 'innerWidth'	, 'outerWidth'	, 'height'	, 'innerHeight'	, 'outerHeight'	, 'left', 'top'	, 'marginRight'	, 0, 1, 2, 3],
-				['height'	, 'innerHeight'	, 'outerHeight'	, 'width'	, 'innerWidth'	, 'outerWidth'	, 'top'	, 'left', 'marginBottom', 3, 2, 1, 0]
+				['height'	, 'innerHeight'	, 'outerHeight'	, 'width'	, 'innerWidth'	, 'outerWidth'	, 'top'	, 'left', 'marginBottom', 3, 2, 1, 0],
+				['width'	, 'innerWidth'	, 'outerWidth'	, 'height'	, 'innerHeight'	, 'outerHeight'	, 'right', 'top', 'marginRight'	, 0, 1, 2, 3]
 			];
 
-		var dl = dm[0].length,
-			dx = (o.direction == 'right' || o.direction == 'left') ? 0 : 1;
+		var dl = dm[0].length;
+		if (o.direction == 'right' || o.direction == 'left') {
+			if (o.orientation == 'ltr') {
+				var dx = 0;
+			} else {
+				var dx = 2;
+			}
+		} else {
+			var dx = 1;
+		}
 
 		var dimensions = {};
 		for (var d = 0; d < dl; d++)
