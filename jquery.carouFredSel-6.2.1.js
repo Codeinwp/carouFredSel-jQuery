@@ -268,7 +268,7 @@
 			}
 			//	/DEPRECATED
 
-			$cfs.trigger('onInit', {});	
+			$cfs.trigger('onInit', this);	
 
 		};	//	/init
 
