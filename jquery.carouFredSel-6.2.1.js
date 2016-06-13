@@ -268,6 +268,7 @@
 			}
 			//	/DEPRECATED
 
+			$cfs.trigger('onInit', {});	
 
 		};	//	/init
 
