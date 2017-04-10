@@ -4169,7 +4169,7 @@
 		return (a instanceof Array);
 	}
 	function is_jquery(a) {
-		return (a instanceof jQuery);
+		return (a instanceof $);
 	}
 	function is_object(a) {
 		return ((a instanceof Object || typeof a == 'object') && !is_null(a) && !is_jquery(a) && !is_array(a) && !is_function(a));
