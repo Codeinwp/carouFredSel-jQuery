@@ -2054,7 +2054,7 @@
 					//	callback function for specific option
 					if (is_function(b))
 					{
-						var val = eval('opts.'+a);
+						var val = get_set_path(opts, a);
 						if (is_undefined(val))
 						{
 							val = '';
@@ -2065,14 +2065,14 @@
 					else if (!is_undefined(b))
 					{
 						if (typeof c !== 'boolean') c = true;
-						eval('opts_orig.'+a+' = b');
+						get_set_path(opts_orig, a, b);
 						if (c !== false) reInit = true;
-						else eval('opts.'+a+' = b');
+						else get_set_path(opts, a, b);
 					}
 					//	return value for specific option
 					else
 					{
-						return eval('opts.'+a);
+						return get_set_path(opts, a);
 					}
 				}
 				if (reInit)
@@ -4159,6 +4159,13 @@
 	}
 
 	//	helper functions
+	function get_set_path(object, path, value) {
+		path = path.split('.')
+		var key = path.pop();
+		var target = path.reduce(function (target, key) { return target[key] }, object);
+
+		return is_undefined(value) ? target[key] : target[key] = value;
+	}
 	function is_null(a) {
 		return (a === null);
 	}
